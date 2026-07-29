@@ -30,17 +30,44 @@ function redirectToLoginIfNeeded() {
   });
 }
 
+function getSupabaseAuthParams() {
+  const searchParams = new URLSearchParams(window.location.search || '');
+  const hashParams = new URLSearchParams((window.location.hash || '').replace(/^#/, ''));
+  const params = {};
+
+  for (const [key, value] of searchParams.entries()) {
+    params[key] = value;
+  }
+
+  for (const [key, value] of hashParams.entries()) {
+    params[key] = value;
+  }
+
+  return params;
+}
+
+function hasSupabaseAuthParams() {
+  const params = getSupabaseAuthParams();
+  return Boolean(params.access_token || params.refresh_token || params.token_hash || params.error_description || params.error);
+}
+
 async function finalizeEmailConfirmation() {
   if (!window.supabase) {
     setAuthMessage('La configuration Supabase n\'est pas encore renseignée.', true);
     return;
   }
 
-  const params = new URLSearchParams(window.location.search);
-  const accessToken = params.get('access_token');
-  const refreshToken = params.get('refresh_token');
-  const tokenHash = params.get('token_hash');
-  const type = params.get('type');
+  const params = getSupabaseAuthParams();
+  const accessToken = params.access_token;
+  const refreshToken = params.refresh_token;
+  const tokenHash = params.token_hash;
+  const type = params.type;
+  const errorDescription = params.error_description || params.error;
+
+  if (errorDescription) {
+    setAuthMessage(errorDescription || 'La confirmation a échoué.', true);
+    return;
+  }
 
   if (!accessToken && !refreshToken && !tokenHash) {
     setAuthMessage('Aucun code de confirmation n\'a été trouvé dans l\'URL.', true);

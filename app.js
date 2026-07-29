@@ -34,8 +34,8 @@ async function demoRegister(e) {
   showAuthMessage('Création du compte en cours...');
 
   const redirectUrl = window.location.hostname === 'localhost'
-    ? `${window.location.origin}/login.html`
-    : 'https://bedonabedo.github.io/bedonabedo-distribution/login.html';
+    ? `${window.location.origin}/confirm.html`
+    : 'https://bedonabedo.github.io/bedonabedo-distribution/confirm.html';
 
   const signupOptions = {
     emailRedirectTo: redirectUrl,
@@ -118,6 +118,11 @@ function attachLogoutLinks() {
 
 function initializeAuthUi() {
   attachLogoutLinks();
+
+  if (hasSupabaseAuthParams()) {
+    finalizeEmailConfirmation();
+    return;
+  }
 
   if (window.location.pathname.endsWith('dashboard.html') || window.location.pathname.endsWith('/dashboard.html')) {
     protectDashboardPage();

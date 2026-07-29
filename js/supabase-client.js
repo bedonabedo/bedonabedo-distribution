@@ -1,6 +1,6 @@
 // Supabase client configuration for browser-side auth.
-// The project URL is derived from the provided Supabase project reference.
-const SUPABASE_URL = 'https://XOpJ-VTpIMtaRxQW3RN07g_HbUDMeUN.supabase.co';
+// Use the canonical project URL for this Supabase project so browser auth requests can reach the correct host.
+const SUPABASE_URL = 'https://xopj-vtpimtarxqwr3rn07g-hbudmeun.supabase.co';
 const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_XOpJ-VTpIMtaRxQW3RN07g_HbUDMeUN';
 
 const hasSupabaseConfig = SUPABASE_URL !== '' && SUPABASE_PUBLISHABLE_KEY !== '';

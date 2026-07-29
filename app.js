@@ -37,17 +37,19 @@ async function demoRegister(e) {
     ? `${window.location.origin}/login.html`
     : 'https://bedonabedo.github.io/bedonabedo-distribution/login.html';
 
+  const signupOptions = {
+    emailRedirectTo: redirectUrl,
+    data: {
+      full_name: fullName,
+      artist_name: artistName,
+      country,
+    },
+  };
+
   const { data, error } = await window.supabase.auth.signUp({
     email,
     password,
-    options: {
-      emailRedirectTo: redirectUrl,
-      data: {
-        full_name: fullName,
-        artist_name: artistName,
-        country,
-      },
-    },
+    options: signupOptions,
   });
 
   if (error) {

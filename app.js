@@ -122,6 +122,10 @@ function initializeAuthUi() {
   if (window.location.pathname.endsWith('dashboard.html') || window.location.pathname.endsWith('/dashboard.html')) {
     protectDashboardPage();
   }
+
+  if (window.location.pathname.endsWith('confirm.html') || window.location.pathname.endsWith('/confirm.html')) {
+    finalizeEmailConfirmation();
+  }
 }
 
 if (document.readyState === 'loading') {

@@ -12,7 +12,7 @@ function setAuthMessage(message, isError = false) {
 }
 
 function redirectToLoginIfNeeded() {
-  if (window.location.pathname.endsWith('/login.html') || window.location.pathname.endsWith('/register.html')) {
+  if (window.location.pathname.endsWith('/login.html') || window.location.pathname.endsWith('/register.html') || window.location.pathname.endsWith('/confirm.html')) {
     return;
   }
 
@@ -28,6 +28,69 @@ function redirectToLoginIfNeeded() {
   }).catch(() => {
     window.location.href = 'login.html';
   });
+}
+
+async function finalizeEmailConfirmation() {
+  if (!window.supabase) {
+    setAuthMessage('La configuration Supabase n\'est pas encore renseignée.', true);
+    return;
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const accessToken = params.get('access_token');
+  const refreshToken = params.get('refresh_token');
+  const tokenHash = params.get('token_hash');
+  const type = params.get('type');
+
+  if (!accessToken && !refreshToken && !tokenHash) {
+    setAuthMessage('Aucun code de confirmation n\'a été trouvé dans l\'URL.', true);
+    return;
+  }
+
+  try {
+    if (tokenHash && type) {
+      const { data, error } = await window.supabase.auth.verifyOtp({
+        token_hash: tokenHash,
+        type,
+      });
+
+      if (error) {
+        console.error('OTP verification failed', error);
+        setAuthMessage('La confirmation a échoué. Veuillez réessayer ou demander un nouvel e-mail.', true);
+        return;
+      }
+
+      if (data.session) {
+        setAuthMessage('Votre adresse e-mail a bien été confirmée. Vous pouvez maintenant vous connecter.');
+        window.location.href = 'login.html';
+        return;
+      }
+    }
+
+    if (accessToken && refreshToken) {
+      const { data, error } = await window.supabase.auth.setSession({
+        access_token: accessToken,
+        refresh_token: refreshToken,
+      });
+
+      if (error) {
+        console.error('Session exchange failed', error);
+        setAuthMessage('La confirmation a échoué. Veuillez réessayer.', true);
+        return;
+      }
+
+      if (data.session) {
+        setAuthMessage('Votre adresse e-mail a bien été confirmée. Vous pouvez maintenant vous connecter.');
+        window.location.href = 'login.html';
+        return;
+      }
+    }
+
+    setAuthMessage('La confirmation est en cours mais aucune session n\'a pu être établie.', true);
+  } catch (error) {
+    console.error('Email confirmation error', error);
+    setAuthMessage('La confirmation a rencontré une erreur inattendue.', true);
+  }
 }
 
 function setDashboardLoadingState() {

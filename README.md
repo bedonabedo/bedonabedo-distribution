@@ -1,22 +1,31 @@
-# Bedonabedo Distribution — Prototype MVP
+# Bedonabedo Distribution
 
-Prototype statique gratuit de plateforme de distribution musicale.
+Prototype front-end d'une plateforme de distribution musicale destinée aux artistes indépendants.
 
-## Déploiement gratuit
-1. Décompressez le ZIP.
-2. Ouvrez `index.html` pour tester localement.
-3. Pour publier gratuitement, envoyez le dossier sur GitHub Pages ou Cloudflare Pages.
+## Structure du dépôt
 
-## Important
-Ce prototype est une démonstration front-end. Les comptes, fichiers, base de données, paiements, distribution DSP et Content ID ne sont pas encore connectés à de vrais services.
+- `index.html`
+- `admin.html`
+- `content-id.html`
+- `dashboard.html`
+- `earnings.html`
+- `login.html`
+- `register.html`
+- `releases.html`
+- `submit-release.html`
+- `README.md`
+- `css/style.css`
+- `app.js`
 
-## Pages
-- index.html
-- register.html
-- login.html
-- dashboard.html
-- submit-release.html
-- releases.html
-- earnings.html
-- content-id.html
-- admin.html
+## Déploiement GitHub Pages
+
+Ce projet est prêt pour GitHub Pages avec la configuration :
+- Source : `Deploy from a branch`
+- Branch : `main`
+- Folder : `/`
+
+L'accueil est `index.html` à la racine et le fichier CSS est `css/style.css`.
+
+## Avertissement
+
+Ce site est un prototype statique. Les comptes, la distribution musicale, les paiements et le Content ID sont simulés. Une intégration réelle sera ajoutée ultérieurement.

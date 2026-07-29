@@ -1,1 +1,77 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Administration</title><link rel="stylesheet" href="css/style.css"></head><body><div class="app"><aside><a class="brand" href="index.html">BEDONABEDO <span>DISTRIBUTION</span></a><a class="active" href="admin.html">⌂ Administration</a><a href="dashboard.html">Voir espace artiste</a></aside><main class="dash"><p class="eyebrow">ADMINISTRATION</p><h1>Centre de contrôle</h1><div class="stats"><div><span>Artistes</span><strong>0</strong></div><div><span>Sorties</span><strong>0</strong></div><div><span>En attente</span><strong>0</strong></div><div><span>Revenus générés</span><strong>0,00 €</strong></div></div><section class="panel"><h2>Sorties en attente</h2><div class="empty"><p>Aucune sortie à examiner.</p></div></section></main></div></body></html>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Administration | Bedonabedo Distribution</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <a class="brand" href="index.html">BEDONABEDO <span>DISTRIBUTION</span></a>
+      <nav>
+        <a class="active" href="admin.html">⌂ Administration</a>
+        <a href="dashboard.html">Voir espace artiste</a>
+        <a href="login.html">↩ Déconnexion</a>
+      </nav>
+    </aside>
+    <main class="dash">
+      <div class="top-bar">
+        <div>
+          <p class="small">ESPACE ADMIN</p>
+          <h1>Centre de contrôle</h1>
+          <p class="lead">Supervisez les artistes, les sorties et le flux de validation dans ce prototype d'administration.</p>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span>Artistes</span>
+          <strong>125</strong>
+        </div>
+        <div class="stat-card">
+          <span>Sorties</span>
+          <strong>42</strong>
+        </div>
+        <div class="stat-card">
+          <span>En attente</span>
+          <strong>8</strong>
+        </div>
+        <div class="stat-card">
+          <span>Approuvées</span>
+          <strong>27</strong>
+        </div>
+      </div>
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Gestion des artistes</h2>
+          <a href="dashboard.html">Voir artiste</a>
+        </div>
+        <div class="table-card">
+          <table class="panel-table">
+            <thead>
+              <tr><th>Artiste</th><th>Pays</th><th>Sorties</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Nyara</td><td>France</td><td>8</td><td><span class="status approved">Actif</span></td></tr>
+              <tr><td>Sambele</td><td>Congo</td><td>4</td><td><span class="status pending">Vérification</span></td></tr>
+              <tr><td>Luna</td><td>Belgique</td><td>5</td><td><span class="status approved">Actif</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Actions rapides</h2>
+          <span class="badge">Prototype</span>
+        </div>
+        <div class="grid">
+          <div class="card"><h3>Approuver des sorties</h3><p>Validez rapidement les nouvelles propositions de singles, EP et albums.</p></div>
+          <div class="card"><h3>Modifier un artiste</h3><p>Accédez aux profils et mettez à jour les informations des artistes.</p></div>
+          <div class="card"><h3>Voir les revenus</h3><p>Consultez les estimations de revenus et les performances globales.</p></div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

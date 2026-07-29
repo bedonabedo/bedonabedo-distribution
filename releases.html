@@ -1,1 +1,55 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mes sorties</title><link rel="stylesheet" href="css/style.css"></head><body><div class="app"><aside><a class="brand" href="index.html">BEDONABEDO <span>DISTRIBUTION</span></a><a href="dashboard.html">⌂ Dashboard</a><a class="active" href="releases.html">♫ Mes sorties</a><a href="submit-release.html">＋ Soumettre une sortie</a><a href="earnings.html">€ Mes revenus</a><a href="content-id.html">▶ Content ID</a></aside><main class="dash"><div class="top"><div><p class="eyebrow">CATALOGUE</p><h1>Mes sorties</h1></div><a class="btn" href="submit-release.html">＋ Nouvelle sortie</a></div><section class="panel"><div class="empty">🎼<h3>Votre catalogue est vide</h3><p>Vos sorties apparaîtront ici après soumission.</p></div></section></main></div></body></html>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mes sorties | Bedonabedo Distribution</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <a class="brand" href="index.html">BEDONABEDO <span>DISTRIBUTION</span></a>
+      <nav>
+        <a href="dashboard.html">⌂ Tableau de bord</a>
+        <a class="active" href="releases.html">♫ Mes sorties</a>
+        <a href="submit-release.html">＋ Nouvelle sortie</a>
+        <a href="earnings.html">€ Mes revenus</a>
+        <a href="content-id.html">▶ Content ID</a>
+        <a href="login.html">↩ Déconnexion</a>
+      </nav>
+    </aside>
+    <main class="dash">
+      <div class="top-bar">
+        <div>
+          <p class="small">CATALOGUE ARTISTE</p>
+          <h1>Mes sorties</h1>
+        </div>
+        <a class="button" href="submit-release.html">Ajouter une sortie</a>
+      </div>
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Sorties récentes</h2>
+          <a href="dashboard.html">Retour au tableau</a>
+        </div>
+        <div class="table-card">
+          <table class="panel-table">
+            <thead>
+              <tr><th>Titre</th><th>Type</th><th>Date</th><th>Statut</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Écho Urbain</td><td>Single</td><td>21 avr. 2026</td><td><span class="status approved">Publié</span></td></tr>
+              <tr><td>Renaissance</td><td>EP</td><td>12 mai 2026</td><td><span class="status pending">En validation</span></td></tr>
+              <tr><td>Passage</td><td>Album</td><td>07 juin 2026</td><td><span class="status approved">Publié</span></td></tr>
+              <tr><td>Vertige</td><td>Single</td><td>13 juin 2026</td><td><span class="status pending">En attente</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <div class="notice">
+        <strong>Prototype :</strong> les données sont fictives et servent à illustrer l'interface.
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,2 +1,45 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Inscription artiste</title><link rel="stylesheet" href="css/style.css"></head>
-<body class="center"><div class="auth wide"><a class="brand" href="index.html">BEDONABEDO <span>DISTRIBUTION</span></a><h1>Créer mon compte artiste</h1><p>Commencez votre inscription gratuitement.</p><form onsubmit="demoRegister(event)"><div class="two"><label>Nom complet<input required></label><label>Nom d'artiste<input required></label></div><label>Email<input type="email" required></label><div class="two"><label>Pays<input placeholder="Congo-Brazzaville" required></label><label>Type de compte<select><option>Artiste</option><option>Label</option><option>Manager</option></select></label></div><label>Mot de passe<input type="password" minlength="6" required></label><label class="check"><input type="checkbox" required> J'accepte les conditions d'utilisation.</label><button class="btn">Créer mon compte</button></form><p id="msg"></p><p class="muted">Déjà inscrit ? <a href="login.html">Se connecter</a></p></div><script src="js/app.js"></script></body></html>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Inscription artiste | Bedonabedo Distribution</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="auth-page">
+    <section class="auth-card">
+      <a class="brand" href="index.html">BEDONABEDO <span>DISTRIBUTION</span></a>
+      <h1>Créer un compte artiste</h1>
+      <p class="description">Commencez votre inscription gratuitement. Prototype front-end simulé.</p>
+      <form onsubmit="demoRegister(event)">
+        <div class="two">
+          <label>Nom complet
+            <input type="text" placeholder="Nom complet" required>
+          </label>
+          <label>Nom d'artiste
+            <input type="text" placeholder="Nom d'artiste" required>
+          </label>
+        </div>
+        <label>Email
+          <input type="email" placeholder="votre@email.com" required>
+        </label>
+        <div class="two">
+          <label>Mot de passe
+            <input type="password" placeholder="••••••••" minlength="6" required>
+          </label>
+          <label>Confirmation du mot de passe
+            <input type="password" placeholder="••••••••" minlength="6" required>
+          </label>
+        </div>
+        <label class="small"><input type="checkbox" required> J'accepte que ceci soit un prototype simulé.</label>
+        <button class="btn" type="submit">Créer mon compte</button>
+      </form>
+      <p class="small">Déjà inscrit ? <a href="login.html">Se connecter</a></p>
+      <p class="small"><a href="index.html">Retour à l'accueil</a></p>
+      <p id="msg" class="small"></p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

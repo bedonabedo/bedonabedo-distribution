@@ -33,10 +33,15 @@ async function demoRegister(e) {
 
   showAuthMessage('Création du compte en cours...');
 
+  const redirectUrl = window.location.hostname === 'localhost'
+    ? `${window.location.origin}/login.html`
+    : 'https://bedonabedo.github.io/bedonabedo-distribution/login.html';
+
   const { data, error } = await window.supabase.auth.signUp({
     email,
     password,
     options: {
+      emailRedirectTo: redirectUrl,
       data: {
         full_name: fullName,
         artist_name: artistName,

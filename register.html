@@ -15,21 +15,24 @@
       <form onsubmit="demoRegister(event)">
         <div class="two">
           <label>Nom complet
-            <input type="text" placeholder="Nom complet" required>
+            <input id="register-full-name" name="full_name" type="text" placeholder="Nom complet" required>
           </label>
           <label>Nom d'artiste
-            <input type="text" placeholder="Nom d'artiste" required>
+            <input id="register-artist-name" name="artist_name" type="text" placeholder="Nom d'artiste" required>
           </label>
         </div>
         <label>Email
-          <input type="email" placeholder="votre@email.com" required>
+          <input id="register-email" name="email" type="email" placeholder="votre@email.com" required>
+        </label>
+        <label>Pays
+          <input id="register-country" name="country" type="text" placeholder="France" required>
         </label>
         <div class="two">
           <label>Mot de passe
-            <input type="password" placeholder="••••••••" minlength="6" required>
+            <input id="register-password" name="password" type="password" placeholder="••••••••" minlength="6" required>
           </label>
           <label>Confirmation du mot de passe
-            <input type="password" placeholder="••••••••" minlength="6" required>
+            <input id="register-confirm-password" name="confirm_password" type="password" placeholder="••••••••" minlength="6" required>
           </label>
         </div>
         <label class="small"><input type="checkbox" required> J'accepte que ceci soit un prototype simulé.</label>
@@ -40,6 +43,9 @@
       <p id="msg" class="small"></p>
     </section>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/auth.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

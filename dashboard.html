@@ -16,15 +16,20 @@
         <a href="submit-release.html">＋ Nouvelle sortie</a>
         <a href="earnings.html">€ Mes revenus</a>
         <a href="content-id.html">▶ Content ID</a>
-        <a href="login.html">↩ Déconnexion</a>
+        <a href="#" data-auth-logout>↩ Déconnexion</a>
       </nav>
     </aside>
     <main class="dash">
       <div class="top-bar">
         <div>
           <p class="small">ESPACE ARTISTE</p>
-          <h1>Bonjour, artiste.</h1>
+          <h1>Bonjour, <span data-dashboard-user-name>artiste</span>.</h1>
           <p class="lead">Votre tableau de bord réunit vos sorties, vos revenus et vos opportunités de droits.</p>
+          <p class="small" data-dashboard-user-email>Connexion en cours...</p>
+          <div style="display:flex;align-items:center;gap:12px;margin-top:10px;flex-wrap:wrap;">
+            <img data-dashboard-user-avatar alt="Avatar" style="display:none;width:44px;height:44px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.08);">
+            <p class="small" data-dashboard-user-profile>Chargement du profil...</p>
+          </div>
         </div>
         <a class="button" href="submit-release.html">+ Nouvelle sortie</a>
       </div>
@@ -90,5 +95,9 @@
       </section>
     </main>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

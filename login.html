@@ -14,10 +14,10 @@
       <p class="description">Accédez à votre espace prototype pour gérer vos sorties et vos revenus.</p>
       <form onsubmit="demoLogin(event)">
         <label>Email
-          <input type="email" placeholder="votre@email.com" required>
+          <input id="login-email" name="email" type="email" placeholder="votre@email.com" required>
         </label>
         <label>Mot de passe
-          <input type="password" placeholder="••••••••" required>
+          <input id="login-password" name="password" type="password" placeholder="••••••••" required>
         </label>
         <button class="btn" type="submit">Se connecter</button>
       </form>
@@ -26,6 +26,9 @@
       <p id="msg" class="small"></p>
     </section>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/auth.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
